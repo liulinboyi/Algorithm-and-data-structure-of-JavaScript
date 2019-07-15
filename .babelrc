@@ -1,0 +1,32 @@
+// {
+//   "presets": [
+//     //要加载和使用的preset列表，preset名前的babel-preset-可省略；presets列表的preset按从尾到头的逆序运行（为了兼容用户使用习惯）
+//     [
+//       "env",
+//       {
+//         "modules": false,
+//         "targets": {
+//           "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+//         }
+//       }
+//     ],
+//     "stage-2",
+//     "es2015"
+//   ],
+//   "plugins": [], //该属性是告诉babel要使用那些插件，这些插件可以控制如何转换代码。要加载和使用的插件列表，插件名前的babel-plugin-可省略；plugin列表按从头到尾的顺序运行
+//   "env": {
+//     //指定在不同环境下使用的配置。比如production和development两个环境使用不同的配置，就可以通过这个字段来配置。env字段的从process.env.BABEL_ENV获取，如果BABEL_ENV不存在，则从process.env.NODE_ENV获取，如果NODE_ENV还是不存在，则取默认值"development"
+//     "test": {
+//       "presets": ["env", "stage-2"],
+//       "plugins": [
+//         // "transform-vue-jsx",
+//         // "transform-es2015-modules-commonjs",
+//         // "dynamic-import-node"
+//       ]
+//     }
+//   }
+// }
+// //同时设置了presets和plugins，那么plugins的先运行；
+{
+  "presets": ["@babel/preset-env"]
+}
