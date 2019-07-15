@@ -17,5 +17,13 @@
 // };
 
 module.exports = {
-    "extends": ["standard", "plugin:jest/recommended"]
+  extends: ["plugin:jest/recommended"],
+  plugins: ["prettier"],
+  parserOptions: {
+    ecmaVersion: 7,
+    sourceType: "module"
+  },
+  rules: {
+    "prettier/prettier": "error"
+  }
 };
