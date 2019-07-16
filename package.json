@@ -6,13 +6,15 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint src --fix",
-    "lint:create": "eslint --init"
+    "lint:create": "eslint --init",
+    "type-check": "tsc --noEmit"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@babel/core": "7.1.2",
     "@babel/preset-env": "7.1.6",
+    "@babel/preset-typescript": "^7.3.3",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^24.5.0",
     "babel-preset-env": "1.7.0",
@@ -21,6 +23,7 @@
     "regenerator-runtime": "0.12.1"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.15",
     "eslint": "5.9.0",
     "eslint-config-standard": "12.0.0",
     "eslint-plugin-import": "2.14.0",
