@@ -16,14 +16,14 @@
 //     }
 // };
 
-module.exports = {
-  extends: ["plugin:jest/recommended"],
-  plugins: ["prettier"],
-  parserOptions: {
-    ecmaVersion: 7,
-    sourceType: "module"
+{
+  "extends": ["plugin:jest/recommended"],
+  "plugins": ["prettier"],
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module"
   },
-  rules: {
+  "rules": {
     "prettier/prettier": "error"
   }
-};
+}
