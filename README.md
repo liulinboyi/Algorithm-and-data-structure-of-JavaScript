@@ -26,8 +26,10 @@ export default sort;
 2. 二进制子串
    [二进制子串](https://github.com/liulinboyi/Algorithm-and-data-structure-of-JavaScript/blob/master/src/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AD%90%E4%B8%B2.ts)
 
-```javascript
-export default s => {
+<details>
+  <summary>代码</summary>
+  <pre>
+  <code>export default s => {
   let last = 0; // last 上一次连续的个数
   let cur = 0; // cur  当前数字连续的个数
   let count = 0; // 符合规则子串的数量
@@ -42,20 +44,18 @@ export default s => {
       cur = 0;
     }
   }
+// 最后一位情况
+// cur ==0 <=> 后两位不同
+if (cur == 0) {
+cur = 1;
+} else {
+cur++;
+}
+if (last >= cur) {
+count++;
+}
+return count;
+};</code>
 
-  // 最后一位情况
-  // cur ==0 <=> 后两位不同
-  if (cur == 0) {
-    cur = 1;
-  } else {
-    cur++;
-  }
-
-  if (last >= cur) {
-    count++;
-  }
-
-  return count;
-};
-```
-
+  </pre>
+</details>
