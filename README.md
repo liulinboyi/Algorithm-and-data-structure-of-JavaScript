@@ -4,8 +4,10 @@
 
 1. [翻转字符串](https://github.com/liulinboyi/Algorithm-and-data-structure-of-JavaScript/blob/master/src/%E7%BF%BB%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2.ts)
 
-```javascript
-function sort(str) {
+<details>
+  <summary>代码</summary>
+  <pre>
+  <code>function sort(str) {
   let temp = str
     .split(/\s/g)
     .map(item => {
@@ -20,8 +22,9 @@ function sort(str) {
 }
 
 // module.exports = sort;
-export default sort;
-```
+export default sort;</code>
+  </pre>
+</details>
 
 2. 二进制子串
    [二进制子串](https://github.com/liulinboyi/Algorithm-and-data-structure-of-JavaScript/blob/master/src/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AD%90%E4%B8%B2.ts)
