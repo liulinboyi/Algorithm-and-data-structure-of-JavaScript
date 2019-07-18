@@ -8,7 +8,6 @@ function sort(str: String): String {
         .join("");
     })
     .join(" ");
-  console.log(temp);
   return temp;
 }
 
