@@ -1,4 +1,4 @@
-import s from "../src/二进制子串Other";
+import s from "../src/string/二进制子串Other";
 
 test("二进制子串Other ", () => {
   expect(s("00110011")).toStrictEqual([
