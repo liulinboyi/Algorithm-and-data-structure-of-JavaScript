@@ -41,6 +41,6 @@ export default (flower, n) => {
   } else {
     count = (count - 1) / 2;
   }
-  if (count === n) return true;
+  if (count >= n) return true;
   return false;
 };
