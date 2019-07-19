@@ -26,10 +26,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: .
-      - run:
-          name: Install JUnit coverage reporter
-          command: yarn add --dev jest-junit          
+          at: .        
       - run: yarn ci
       - store_test_results:
           path: test-results

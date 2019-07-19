@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="10" failures="0" time="9.514">
+  <testsuite name="test\卡牌分组new.test.ts" errors="0" failures="0" skipped="0" timestamp="2019-07-19T10:41:47" time="4.946" tests="2">
+    <testcase classname="-卡牌分组new " name="-卡牌分组new " time="0.066">
+    </testcase>
+    <testcase classname="-卡牌分组new " name="-卡牌分组new " time="0.007">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\种花问题new.test.ts" errors="0" failures="0" skipped="0" timestamp="2019-07-19T10:41:52" time="0.199" tests="1">
+    <testcase classname="-种花问题new" name="-种花问题new" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\sum.test.ts" errors="0" failures="0" skipped="0" timestamp="2019-07-19T10:41:53" time="0.222" tests="1">
+    <testcase classname="-adds 1 + 2 to equal 3" name="-adds 1 + 2 to equal 3" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\翻转字符串.test.ts" errors="0" failures="0" skipped="0" timestamp="2019-07-19T10:41:53" time="0.202" tests="1">
+    <testcase classname="-翻转字符串" name="-翻转字符串" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\二进制子串.test.ts" errors="0" failures="0" skipped="0" timestamp="2019-07-19T10:41:53" time="0.189" tests="1">
+    <testcase classname="-二进制子串 " name="-二进制子串 " time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\二进制子串Other.test.ts" errors="0" failures="0" skipped="0" timestamp="2019-07-19T10:41:53" time="0.194" tests="2">
+    <testcase classname="-二进制子串Other " name="-二进制子串Other " time="0.004">
+    </testcase>
+    <testcase classname="-二进制子串Other1 " name="-二进制子串Other1 " time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\电话号码的字母组合.test.ts" errors="0" failures="0" skipped="0" timestamp="2019-07-19T10:41:53" time="0.228" tests="1">
+    <testcase classname="-电话号码的字母组合" name="-电话号码的字母组合" time="0.013">
+    </testcase>
+  </testsuite>
+  <testsuite name="test\种花问题.test.ts" errors="0" failures="0" skipped="0" timestamp="2019-07-19T10:41:54" time="0.232" tests="1">
+    <testcase classname="-种花问题 [1, 0, 0, 0, 1], 1" name="-种花问题 [1, 0, 0, 0, 1], 1" time="0.003">
+    </testcase>
+  </testsuite>
+</testsuites>

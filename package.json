@@ -4,11 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --config=jest.config.js --runInBand --reporters=jest-junit",
     "lint": "eslint src --fix",
     "lint:create": "eslint --init",
     "type-check": "tsc --noEmit",
-    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.js --runInBand"
+    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.js --runInBand --reporters=jest-junit"
+  },
+  "jest-junit": {
+    "suiteName": "jest tests",
+    "outputDirectory": "./test-results/jest/",
+    "outputName": "./results.xml",
+    "classNameTemplate": "{classname}-{title}",
+    "titleTemplate": "{classname}-{title}",
+    "ancestorSeparator": " › ",
+    "usePathForSuiteName": "true"
   },
   "author": "",
   "license": "ISC",
@@ -33,6 +42,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-promise": "4.0.1",
     "eslint-plugin-standard": "4.0.0",
+    "jest-junit": "^6.4.0",
     "prettier": "^1.18.2"
   }
 }
