@@ -8,7 +8,7 @@
     "lint": "eslint src --fix",
     "lint:create": "eslint --init",
     "type-check": "tsc --noEmit",
-    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest"
+    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.js --runInBand"
   },
   "author": "",
   "license": "ISC",
