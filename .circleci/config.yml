@@ -21,20 +21,6 @@ jobs:
           root: .
           paths:
             - node_modules
-  build:
-    <<: *defaults
-    steps:
-      - checkout
-      - attach_workspace:
-          at: .
-      - run: yarn build
-      - persist_to_workspace:
-          root: .
-          paths:
-            - dist
-            - package.json
-            - LICENSE
-            - README.md
   test:
     <<: *defaults
     steps:
