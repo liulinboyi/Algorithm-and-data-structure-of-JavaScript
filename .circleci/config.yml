@@ -29,7 +29,7 @@ jobs:
           at: .
       - run: yarn test
       - store_test_results:
-          path: test
+          path: test-results
 
 
 
@@ -41,4 +41,3 @@ workflows:
       - test:
           requires:
             - prepare
-            
