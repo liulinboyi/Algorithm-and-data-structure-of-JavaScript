@@ -53,16 +53,15 @@
 
 // export default gcdout;
 
-
 /**
  * @param {number[]} deck
  * @return {boolean}
  */
 
 var group = arr => {
-  let single:Array<any> = [...new Set(arr)];
+  let single: Array<any> = [...new Set(arr)];
   let temp = [];
-  let count:Array<any> = [];
+  let count: Array<any> = [];
   let a = 0;
   single.forEach(item => {
     count[item] = 0;
@@ -88,29 +87,29 @@ function gcd(a, b) {
 }
 var a, b, c;
 
-var hasGroupsSizeX = function (arr) {
-    arr = group(arr)
-    function gcdout(arr){
-    if(arr.length <= 1){
-       return arr[0] % 2 === 0 ? true : false
+var hasGroupsSizeX = function(arr) {
+  arr = group(arr);
+  function gcdout(arr) {
+    if (arr.length <= 1) {
+      return arr[0] % 2 === 0 ? true : false;
     }
-  //两个数才有 最大公约数
-  if (arr.length > 1) {
-    a = arr[0];
-    b = arr[1];
-    c = gcd(a, b);
-    arr.splice(0, 2, c);
-    gcdout(arr);
-  } else {
-    return;
-  }
-  if (c > 1) {
-    return true;
-  }
-  return false;
+    //两个数才有 最大公约数
+    if (arr.length > 1) {
+      a = arr[0];
+      b = arr[1];
+      c = gcd(a, b);
+      arr.splice(0, 2, c);
+      gcdout(arr);
+    } else {
+      return;
     }
-    
-    return gcdout(arr)
- 
-}
+    if (c > 1) {
+      return true;
+    }
+    return false;
+  }
 
+  return gcdout(arr);
+};
+
+export default hasGroupsSizeX;
