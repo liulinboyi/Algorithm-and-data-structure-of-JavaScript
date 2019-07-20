@@ -1,5 +1,9 @@
 # JavaScript 的算法与数据结构
 
+
+## 所有代码均通过LeetCode 测试
+[LeetCode](https://leetcode-cn.com/u/liu-lin-bo-yi)
+
 [![CircleCI](https://circleci.com/gh/liulinboyi/Algorithm-and-data-structure-of-JavaScript/tree/master.svg?style=svg)](https://circleci.com/gh/liulinboyi/Algorithm-and-data-structure-of-JavaScript/tree/master)
 
 ## 字符串
@@ -70,12 +74,15 @@ return count;
 <details>
   <summary>代码</summary>
   <pre>
-  <code>//写的不太好，不要见笑
-//遍历出 所有 相同 元素的 个数
+  <code>/**
+ * @param {number[]} deck
+ * @return {boolean}
+ */
+
 var group = arr => {
-  let single: Array<any> = [...new Set(arr)];
+  let single:Array<any> = [...new Set(arr)];
   let temp = [];
-  let count = [];
+  let count:Array<any> = [];
   let a = 0;
   single.forEach(item => {
     count[item] = 0;
@@ -88,7 +95,6 @@ var group = arr => {
     }
   });
   count = count.filter(item => item !== "empty");
-  console.log(count);
   return count;
 };
 //求出任意正整数的最大公约数
@@ -101,29 +107,32 @@ function gcd(a, b) {
   }
 }
 var a, b, c;
-let gcdout = arr => {
-  arr = group(arr);
+
+var hasGroupsSizeX = function (arr) {
+    arr = group(arr)
+    function gcdout(arr){
+    if(arr.length <= 1){
+       return arr[0] % 2 === 0 ? true : false
+    }
   //两个数才有 最大公约数
   if (arr.length > 1) {
-    console.log(arr);
     a = arr[0];
     b = arr[1];
     c = gcd(a, b);
-    console.log(c);
     arr.splice(0, 2, c);
-    console.log(arr);
     gcdout(arr);
   } else {
-    console.log(c);
     return;
   }
   if (c > 1) {
     return true;
   }
   return false;
-};
-
-export default gcdout;</code>
+    }
+    
+    return gcdout(arr)
+ 
+}</code>
 
   </pre>
 </details>
@@ -133,38 +142,59 @@ export default gcdout;</code>
 <details>
   <summary>代码</summary>
   <pre>
-  <code>let numtostr = str => {
-  let map = ["", 1, "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"];
-  let num = str.split("");
-  let code = [];
-  //将在输入的字符串映射为数组
-  num.forEach(item => {
-    //判断是否存在
-    //边界情况
-    if (map[item]) {
-      code.push(map[item]);
+  <code>/**
+ * @param {string} num
+ * @return {string[]}
+ */
+
+var letterCombinations = function (num){
+    var numobj = {
+2: "abc",
+3: "def",
+4: "ghi",
+5: "jkl",
+6: "mno",
+7: "pqrs",
+8: "tuv",
+9: "wxyz"
+}
+    var a,b;
+    var res = []
+    if(num.length === 0) return []
+    if(num.length === 1){
+            let temp = numobj[num].split("")
+            return temp
+        }
+    if(typeof num === "string"){
+        var arr = num.split("")
+        var flag = arr.every((element, index, array) => {
+        return Object.keys(numobj).includes(element)
+        })
+        if(!flag){
+            throw new Error("请输入的字符串包含2-9");
+            return
+        }
+        a = numobj[arr[0]];
+        b = numobj[arr[1]];
+    }else if(num instanceof Array){
+        var arr = num;
+        a = num[0];
+        b = numobj[num[1]];
     }
-  });
-  let comb = arr => {
-    //临时变量 用来保存前两个 组合的结果
-    let temp = [];
-    for (let i = 0; i < arr[0].length; i++) {
-      for (let j = 0; j < arr[1].length; j++) {
-        temp.push(`${arr[0][i]}${arr[1][j]}`);
-      }
+    
+    for(var i = 0;i<a.length;i++){
+        for(var j = 0;j<b.length;j++){
+            res.push(a[i]+b[j])
+        }
     }
-    console.log(temp);
-    arr.splice(0, 2, temp);
-    console.log(arr);
-    if (arr.length > 1) {
-      comb(arr);
-    } else {
-      return temp;
+    arr.splice(0,2,res)
+    if(arr.length>1){
+        letterCombinations(arr)
+        return arr[0]
+    }else{
+        return arr[0]
     }
-  };
-  return comb(code);
-};
-export default numtostr;</code>
+</code>
 
   </pre>
 </details>
@@ -174,51 +204,32 @@ export default numtostr;</code>
 <details>
   <summary>代码</summary>
   <pre>
-  <code>export default (flower, n) => {
-  // flower = [1,0,0,0,1] 5
-  // flower = [1,0,1,0,1] 5
-  // flower = [1,0,10,0,0,1] 6
-  // flower = [1,0,10,0,10,0,1] 7
-  // flower = [1,0,10,0,10,0,10,0,1]
+  <code>/**
+ * @param {number[]} flowerbed
+ * @param {number} n
+ * @return {boolean}
+ */
+var canPlaceFlowers = function(flower, n) {
+  let max = 0;
+    if(flower.length>2){
+        flower = [...flower,0]
+        for (let i = 0; i < flower.length - 1; i++) {
+        if (flower[i] === 0) {
+          if (i === 0 && flower[1] === 0) {
+            max++;
+            i++;
+          } else if (flower[i - 1] === 0 && flower[i + 1] === 0) {
+            max++;
+            i++;
+          }
+        }
+      }
+    }else{
+        if(!flower.includes(1)) max++
+    }
+  if (max >= n) return true;
 
-// 几个 0 几朵
-// 3 个 1
-// 4 个 1
-// 5 个 2
-// 6 个 2
-// 7 个 3
-// 归纳法
-// 2n+1 n>=1
-// (n-1)/2
-// function group(arr) {
-// console.log(arr);
-// var count = 0;
-// for (var i = 0; i < arr.length; i++) {
-// if (arr[i] === 0) {
-// count++;
-// }
-// }
-// console.log(count);
-// return count;
-// }
-// var result = group(flower);
-
-var count = 0;
-for (var i = 0; i < flower.length; i++) {
-if (flower[i] === 0) {
-count++;
-}
-}
-console.log(count);
-// return count
-if (count % 2 === 0) {
-count = count - 1;
-count = (count - 1) / 2;
-} else {
-count = (count - 1) / 2;
-}
-if (count === n) return true;
-return false;
+  return false;
 };</code>
 
   </pre>

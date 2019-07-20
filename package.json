@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --config=jest.config.js --runInBand --reporters=jest-junit",
+    "test": "jest --config=jest.config.js --runInBand",
     "lint": "eslint src --fix",
     "lint:create": "eslint --init",
     "type-check": "tsc --noEmit",
